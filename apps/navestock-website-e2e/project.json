@@ -1,0 +1,28 @@
+{
+  "root": "apps/navestock-website-e2e",
+  "sourceRoot": "apps/navestock-website-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/navestock-website-e2e/cypress.json",
+        "devServerTarget": "navestock-website:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "navestock-website:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/navestock-website-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["navestock-website"]
+}

@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "navestock-website": "apps/navestock-website",
+    "navestock-website-e2e": "apps/navestock-website-e2e"
+  }
+}
