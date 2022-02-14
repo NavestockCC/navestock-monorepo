@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/navestock-website",
         "index": "apps/navestock-website/src/index.html",
@@ -18,7 +20,9 @@
           "apps/navestock-website/src/favicon.ico",
           "apps/navestock-website/src/assets"
         ],
-        "styles": ["apps/navestock-website/src/styles.scss"],
+        "styles": [
+          "apps/navestock-website/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -83,7 +87,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/navestock-website"],
+      "outputs": [
+        "coverage/apps/navestock-website"
+      ],
       "options": {
         "jestConfig": "apps/navestock-website/jest.config.js",
         "passWithNoTests": true
