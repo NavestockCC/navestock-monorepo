@@ -41,3 +41,4 @@ Thumbs.db
 .angular
 
 apps/functions/test-navestock-website-firebase-adminsdk.json
+apps/functions/src/environments/navestock-website-04b2617e4f2a.ts
