@@ -25,6 +25,7 @@
     "@firebase/testing": "^0.20.11",
     "@nrwl/angular": "13.7.1",
     "@rxap/plugin-firebase": "^12.0.4",
+    "axios": "^0.26.0",
     "firebase": "^9.6.5",
     "firebase-admin": "10.0.2",
     "firebase-functions": "3.16.0",

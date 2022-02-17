@@ -1,15 +1,16 @@
 
 export const firebaseAuthData = {
-    "type": "service_account",
-    "project_id": "navestock-website",
-    "private_key_id": "04b2617e4f2a0a4c52803702bc37690d1e3c5365",
-    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC7+rrzVVFHQa6V\nVfpv0bvoa/odcDzf85ZOgQxxiSnZVsfq/iOKzUohxw00zgcqC3x40X6p3AOy5hph\ngPjajtL5KUNhKTBZ7LIcXgVeNUTqfN9QRBrnYIDt1y/62pYCy6zflgo2QCzckJr3\n1bPtemZi2QgJUJApG6F5PMnFML3LVdTpbgU3Fclp5ssXodhy7AmGNupyf5vcqMNM\nqt3Whee7I+9OZZzHEs8OBkbVlK2DCgH874kn0x92hdjY3a3gNOrPNEh84yQ2BPtf\nIByRBNezRQDh9IDPGO4UMe1UGjn5Qq+Y+ukXJ5+FMf7YsBDYKbBCEdL0y6pDGoiu\n7WcxhHsDAgMBAAECggEAUvm3iQ6ZfIMlLZ0QmUgykkMLWfA/prlOmSOEmx8pHlsc\njwGULcI1XViQX0UsS2ZbkLckmpTX+yFv9qcn8c2Gmd4ZdGtqgN8mtbfY1b9cxsbN\nChCt8YEbGCFa9/eBrQU7r0v7APxt8QRRq2Ek9YgIZsyXLAloQQUFz07CX60GshhT\nXKet4pWV29y+kLFUIHiIOXI6083PyHibIZaB+yEpbQeNrt6FDtiG8V6nk2o4CJ+Y\nOR5na1b1bMPyUR9a9WaIz6CgZxmCrqtxQkas/X+aH4yuZfPPakP8K8BHTRkQawk4\nsPTJftpu2jtg/Qi0zEvQBhefxUWWLLXlBw6PTvKniQKBgQD4sYZ0e0nRnoMi7LFC\ne47G3nlR/2oVPVTAr/vqpHywrHKqHCm75pSaW8GOunSQnp1xn1+IOhRVCiGPlOzv\nFLjvcY8bVbhNC19jPUTDUnMqw+AFnpyTW9/Pw0AGFWV7rmg1GUnkS1LI1VSARxkA\nI9GwgJ/qD8gBiLkvi/poxK6kCwKBgQDBgI/t6lzR5tyBSLSow6EYAFUYSsvCyXcw\nqsQYU4sCQFVYYMRGYp0ncf6NftaCJghNMTMG6ua5yfmvf1335daAJlG9T+2wSP6q\nBhjJpMG46DOdlQNFWJwC1jH+oW5hrre8+DLM07C3y/JeQqNvDEZeQmADVmhLhOFt\njXJTH2qn6QKBgGLrmiOy9oXemyLFKyzaoMwRqggnpDaWkqOiXH3Ut5Q+w81OLnuD\nGBDd9nujRsJPlSig0AsLrxK0WO0Xu7bNc1IqxVWGHyzmHScIM9XNcenMx8r0cCtd\nHAU0EL9au2ca1HBqgq3AGEmyMU5k+VjI5ptiTjl31YJms+Jpt0z9DspJAoGBAIM1\ngOMr0srGB2lm+pGhLaAPwaPaO/aWE8sdUCDKrWzWYMivvQeZIMU5iAk8I4pW7bQi\nE16yc8cxTKyS6g4JfHyi/zQmeZ7asExsG+zHWlDeqvlErNYd8pP92CK4Jhf4mEB7\n8D5xoNfQZEVEXHwVT7XkviQlOE1VCmL10brJh9HZAoGANgRRRYOMY9aWEcZv5Hkr\nMRB49Cr9iHOYYO5APwg2TJxqqDErMqpWid3vC3tNHm1gG+JSAQlVlfmNZ2UwNQTg\n7ai/Kx1TiUz6eTnPz3W+Ph7Tl1c6B0wgmlM8t/VgJGVjXHlXeO91ovtZAHv0FzC+\nvJJSDMbK9xnWZrPr8CdArLU=\n-----END PRIVATE KEY-----\n",
-    "client_email": "navestock-website@appspot.gserviceaccount.com",
-    "client_id": "",
-    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-    "token_uri": "https://oauth2.googleapis.com/token",
-    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/navestock-website%40appspot.gserviceaccount.com"
-  }
+  "type": "service_account",
+  "project_id": "navestock-website",
+  "private_key_id": "8518b6e5aad14147765f8ddcbed5d99ca7a4b2ed",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDBCEI7nfkxU7Df\nca/SrZcPx5pnghiJpLxScrcBu46cNXnH6AEnO92/pn6bA6/5/HFcQKcnKMmSre4M\nGVcZLUUQK+1JCoB9iCMZjFcmH9W8VczIFgz85um8KjGzWp4ZcWNWUHnlpo1DdtKJ\n7m/HjcUGVH/scqAXUnT7fsXIMCmQf5o2W8LvwO/LmQ3aGpjQnn8/tmsPboKG06QU\nm9/8w8oHV7xQX72d6eR5YSNEsY4VZWqw43N/nDmSbRHFpYVq6IGI/0uEcAYp46Dh\nmLg057IC8v9I96DvbvCubsaFKQ6Q7Wzm8R+9bx6vUecmabRmD89ftigFWk0RYYyV\nXU42VyyrAgMBAAECggEAAv+RaJpBM4sLNvqg/ScO6qlUjAPHmkJk5pbQsztsRp+c\njWiYPduaOruOJ67Zab4jx24XH+pbPVF0Xmybzl2Ki/vbwVLrvHqh5PCHnVhq6R8G\nUrVwcPCKNCiFW3GIH9+Do9wmWRlXjLdZrE9Et66PsFPZWLKBXo2Ass2fMwt3760f\n/64s8Kahxyt1X0Cak4H9oLyLyS3SrXYdDJpfTnF8BCFVhADoA+zwSpzK+0jlwyCU\nhhnMGHAkKZO2Qafvc7Pihrp8FUA/BedCpqxvmxGr+UqYtDpbITMM0kd5Hr1eFaLa\nlOw4sIosL7Sff19WlEPGe9QYEWL8wMdR3TDqVFaQ2QKBgQDwfazqPDubDW1xDtC1\nJHqrVL3WEWq9rbGc/MKIWd+zfVxrwTSFTY5hfNceieWr2/c6TpKJFsTb7NpWS7CP\nfAdrdj9tCHiySJDVck6H/3+1BUqACnP8imlN3ziHTI/8hfBkNXytjuqbp1JrYIK3\niEdTnDaRK8ihT2UyMLbh+k4SwwKBgQDNexORcygsyC/aHGoQPY4UB8whlLvfc1O1\nngjC0n+ufSstSJ9ofWJfcpjS6IvT7xcUY/qbq4zVu6sIp+NL2LKa6TGNfWJDo4WS\naCrxVkFgAirMnE9pZDbHVX8CWdSF5k3qE7U9yoNKL2LTjLkfDOODkShIuk3pabKG\nLGPzdaSP+QKBgQDWAvDq7bkZbWSUNNv0J0dmyp25L3yu2TBzBNfU4S3am9ewKJol\nenQXOzJwgcS6IKCs6Zkrl/CNygQuwWKY/YXY0rz0uZI3Da6d1AAgtHUgUVoQAb1f\n4oh9fQTgGnkT/tmDQ7n09XbAF7GXzqXkz8ixlhVVMQJ00qO6e3F0PfxWYwKBgQDB\nr4S3cpPo+l3YuzXizxLwoJTzBm685sl+BVP+yEpgYE3lpnHUHXQvwiZ5j4fWIqVf\nrAoa2G6tPPOv+gjPgpiAWtVBqHGKjkWmxpfL2uFOrVxIeAKGtlbIODe7MI+aE4dX\n4HHTp+NvdxExlZEdypled+JAA5TTMrV7sbYZU8fliQKBgQCVGK8ZYmsU1l8+OAb5\nS/7OR0Nyo1tT5oMVWnUyaYvTJD8+/+cgrGM+V6w61os2zR7D48AjcK/h3icVEqE0\nVqpaOvwbufgG3dvUArymc8TiwskDCofLGskMh7/4+t2TTUw/LFhvp5j5BpNhMtqL\nm2jztcQqwCW8iVHIm3PaVb7SHQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "navestock-website@appspot.gserviceaccount.com",
+  "client_id": "",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/navestock-website%40appspot.gserviceaccount.com"
+}
+
 
   

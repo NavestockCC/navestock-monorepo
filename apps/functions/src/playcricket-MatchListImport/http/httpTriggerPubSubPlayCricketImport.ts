@@ -10,17 +10,7 @@
 import * as functions from 'firebase-functions';
 import { PubSub } from '@google-cloud/pubsub';
 
-/* FIXME: cert for authentication in Pubsub
-import * as navestockCert from '../../environments/navestock-website-04b2617e4f2a';
 
-const credentialsData = {
-  projectId: navestockCert.firebaseAuthData.project_id,
-  credentials: {
-    private_key: navestockCert.firebaseAuthData.private_key,
-    client_email: navestockCert.firebaseAuthData.client_email,
-  },
-};
-*/
 export const httpPublishPlayCricetSeasonToImport = functions
 .runWith({ memory: '128MB', timeoutSeconds: 120 })
 .https
@@ -28,8 +18,10 @@ export const httpPublishPlayCricetSeasonToImport = functions
   async (req, res) => {
     try {
       // Retrieve data from season Param, then package to {JSON} message and push to buffer.
-      if (req.query.season === undefined)
-        throw new Error('API call status : season param not found');
+      if (req.query.season === undefined){
+        const d = new Date();
+        req.query.season = d.getFullYear().toString();
+      }
       const seasonToImport = req.query.season;
       const data = JSON.stringify({ season: seasonToImport });
       const dataBuffer = Buffer.from(data);
@@ -48,16 +40,3 @@ export const httpPublishPlayCricetSeasonToImport = functions
     }
   }
 );
-
-//FIXME: Remove create topic
-async function createTopic(topicName: string) {
-    // Creates a new topic
-    try{
-        const pubSubClient = new PubSub();
-        await pubSubClient.createTopic(topicName,);
-        console.log(`Topic ${topicName} created.`);
-    } catch (err) {
-        console.log(err);
-    }
-   
-  }

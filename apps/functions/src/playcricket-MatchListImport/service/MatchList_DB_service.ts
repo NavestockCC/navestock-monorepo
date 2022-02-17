@@ -21,7 +21,9 @@ export class MatchListDB {
 
         afs.collection(collectionDB).doc(documentDB).set(matchlist);
 
-    } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    } 
 
     
   }
