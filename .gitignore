@@ -43,4 +43,6 @@ Thumbs.db
 # Environment Files
 apps/functions/src/environments
 apps/functions/src/environments/navestock-website-04b2617e4f2a.ts
-
+apps/functions/src/environments/environment.ts
+apps/functions/src/environments/environment.prod.ts
+apps/functions/src/environments/PlayCricket.ts
