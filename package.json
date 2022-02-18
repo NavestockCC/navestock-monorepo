@@ -10,7 +10,7 @@
     "test": "nx test",
     "build:functions:watch": "nx run functions:build --watch",
     "build:functions": "nx run functions:build:production",
-    "firebase:emulators:start": "env-cmd firebase emulators:start --export-on-exit=\".firebase-emulator\" --import=\".firebase-emulator\""
+    "firebase:emulators:start": "firebase emulators:start --import ./apps/test-data/NavestockFirestoreDB --export-on-exit ./apps/test-data/NavestockFirestoreDB"
   },
   "private": true,
   "dependencies": {

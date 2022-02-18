@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { from, Observable } from 'rxjs';
-import * as playcricketCert from "../../environments/PlayCricket";
+import * as playcricketCert from "../environments/PlayCricket";
 
 const playcricketCredentials = {
     "apitoken" : playcricketCert.firebaseAuthData.api_token,

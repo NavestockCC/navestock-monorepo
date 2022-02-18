@@ -6,9 +6,13 @@ export const getPlayCricketMatchDetailPubSub = functions.pubsub
   .topic('PlayCricket_Match_List_Data')
   .onPublish((msgPayload) => {
     try {
-        return 'getPlayCricketMatchDetailsPubSub: excution completed sucsesfully'; 
+      msgPayload.json
+      functions.logger.info('getPlayCricketMatchDetailsPubSub: excution completed sucsesfully');
+      functions.logger.info(msgPayload.json);
+      return null;
     } catch (error) {
-        return `getPlayCricketMatchDetailsPubSub: excution error: ${error}`; 
+      functions.logger.error(`getPlayCricketMatchDetailsPubSub: excution error: ${error}`);   
+      return null;
     }  
     
   });

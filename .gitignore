@@ -46,3 +46,5 @@ apps/functions/src/environments/navestock-website-04b2617e4f2a.ts
 apps/functions/src/environments/environment.ts
 apps/functions/src/environments/environment.prod.ts
 apps/functions/src/environments/PlayCricket.ts
+*.log
+apps/test-data/NavestockFirestoreDB

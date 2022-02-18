@@ -8,8 +8,9 @@
 
 import * as functions from 'firebase-functions';
 
-import { PlayCricketMatchListAPICall } from '../service/MatchListAPICall';
-import { MatchListDB } from '../service/MatchList_DB_service';
+import { PlayCricketMatchListAPICall } from '../../services/PlayCricketAPICall';
+import { MatchListDB } from '../../services/MatchList_DB_service';
+import { PublishPubSubMessage } from '../../services/PublishPubSubMessage';
 
 import { map,} from 'rxjs/operators'
 
@@ -30,6 +31,7 @@ export const getPlayCricketMatchListPubSub = functions.pubsub
      
      
       const PCAPICall = new PlayCricketMatchListAPICall();
+      const psMessage = new PublishPubSubMessage();
 
       PCAPICall.get_PlayCricketApiMatchList(seasonToImport).pipe(
         map((APIResp) => ({
@@ -38,7 +40,10 @@ export const getPlayCricketMatchListPubSub = functions.pubsub
           data: { season: seasonToImport, matches: APIResp.data.matches },
         }))
       ).subscribe(
-        mlData => matchListDB.addMatchlist(mlData.data)
+        mlData => {
+            matchListDB.addMatchlist(mlData.data);
+            psMessage.publishPubSubMessage('PlayCricket_Match_List_Data', mlData.data);
+        }
       );
       return null;
       }
