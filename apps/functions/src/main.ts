@@ -16,7 +16,8 @@ import * as GetPlayCricketMatchListPubSub from './playcricket-MatchListImport/pu
 /**  
  * Import: PlayCricket Match Detail Import Functions
  * */
-import * as GetPlayCricketMatchDetailPubSub from './playcricke-MatchDetailImport/pubsub/playcricketmatchdetail';
+import * as ComparePlayCricketMatchDetailPubSub from './playcricke-MatchDetailImport/pubsub/playcricketmatchdetail';
+import * as GetPlayCricketMatchDetailPubSub from './playcricke-MatchDetailImport/pubsub/getPlayCricketMatchDetails';
 
 //  Start writing Firebase Functions
 //  https://firebase.google.com/docs/functions/typescript
@@ -44,4 +45,5 @@ export const getPlayCricketMatchListPubSub = GetPlayCricketMatchListPubSub.getPl
 /** 
  * PlayCricket Match Detail Import Functions 
  * */
+export const comparePlayCricketMatchDetailPubSub = ComparePlayCricketMatchDetailPubSub.comparePlayCricketMatchDetailPubSub;
 export const getPlayCricketMatchDetailPubSub = GetPlayCricketMatchDetailPubSub.getPlayCricketMatchDetailPubSub;

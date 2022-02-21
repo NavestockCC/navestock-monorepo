@@ -10,7 +10,7 @@ const playcricketCredentials = {
 
 
 export class PlayCricketMatchListAPICall {
-    public get_PlayCricketApiMatchList(seasonID: string): Observable<any> {
+    public getPlayCricketApiMatch_List(seasonID: string): Observable<any> {
         return from(
           axios({
             method: 'get',
@@ -25,4 +25,19 @@ export class PlayCricketMatchListAPICall {
           })
         );
       }
+
+  public getPlayCricketApiMatch_Detail(matchID: string): Observable<any> {
+      return from(
+        axios({
+          method: 'get',
+          baseURL: 'https://play-cricket.com/api/v2',
+          url: 'match_detail.json',
+          responseType: 'json',
+          params: {
+            match_id: matchID,
+            api_token: playcricketCredentials.apitoken,
+          }
+        })
+      );
+    }
 }

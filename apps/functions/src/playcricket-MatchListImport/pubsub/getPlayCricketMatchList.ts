@@ -9,7 +9,7 @@
 import * as functions from 'firebase-functions';
 
 import { PlayCricketMatchListAPICall } from '../../services/PlayCricketAPICall';
-import { MatchListDB } from '../../services/MatchList_DB_service';
+import { MatchListDB } from '../services/MatchList_DB_service';
 import { PublishPubSubMessage } from '../../services/PublishPubSubMessage';
 
 import { map,} from 'rxjs/operators'
@@ -33,7 +33,7 @@ export const getPlayCricketMatchListPubSub = functions.pubsub
       const PCAPICall = new PlayCricketMatchListAPICall();
       const psMessage = new PublishPubSubMessage();
 
-      PCAPICall.get_PlayCricketApiMatchList(seasonToImport).pipe(
+      PCAPICall.getPlayCricketApiMatch_List(seasonToImport).pipe(
         map((APIResp) => ({
           status: APIResp.status,
           statusText: APIResp.statusText,
@@ -45,11 +45,11 @@ export const getPlayCricketMatchListPubSub = functions.pubsub
             psMessage.publishPubSubMessage('PlayCricket_Match_List_Data', mlData.data);
         }
       );
-      return null;
+      return {function: 'getPlayCricketMatchListPubSub', status: 'success'};
       }
       catch (error) {
         functions.logger.error(error);
-        return null;
+        return {function: 'getPlayCricketMatchListPubSub', status: 'error'};
       }
     }
   )

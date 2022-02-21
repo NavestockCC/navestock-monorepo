@@ -10,7 +10,8 @@
     "test": "nx test",
     "build:functions:watch": "nx run functions:build --watch",
     "build:functions": "nx run functions:build:production",
-    "firebase:emulators:start": "firebase emulators:start --import ./apps/test-data/NavestockFirestoreDB --export-on-exit ./apps/test-data/NavestockFirestoreDB"
+    "firebase:emulators:start": "npm run firebase:emulators:kill:ports && firebase emulators:start --import ./apps/test-data/NavestockFirestoreDB --export-on-exit ./apps/test-data/NavestockFirestoreDB",
+    "firebase:emulators:kill:ports": "lsof -t -i tcp:5001 | xargs kill && lsof -t -i tcp:8080 | xargs kill && lsof -t -i tcp:8085 | xargs kill"
   },
   "private": true,
   "dependencies": {

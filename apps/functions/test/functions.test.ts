@@ -1,27 +1,403 @@
-import * as functions from 'firebase-functions-test';
-import * as admin from 'firebase-admin';
-
-import * as myFunctions from "../src/main";
-import { FunctionsErrorCode } from 'firebase-functions/v1/https';
-import { pubsub } from 'firebase-functions/v1';
-import assert = require('assert');
+import * as myServicesFunctions from '../src/playcricke-MatchDetailImport/services/comparison.service';
+import {MatchList, Match} from '../src/interfaces/matchlist.interface';
 
 
-const testEnv =functions({
-  databaseURL: "https://test-navestock-website-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: 'test-navestock-website'
-}, '../test-navestock-website-firebase-adminsdk.json')
+describe('Match List Comparison Service Test', () => {
 
+   test('matchListComparisonOrchestrator should return an Array of Matchid when new match added ', () => {
+     const comparisonServiceFunctions = new myServicesFunctions.ComparisonService();
+     expect(comparisonServiceFunctions.matchListComparisonOrchestrator(pubSubMatchListDataNewmatch, currrentMatcmlchList))
+      .toEqual([1234567]);
+   });
+   
+   test('matchListComparisonOrchestrator should return an Array of Matchid when last_updated != ', () => {
+    const comparisonServiceFunctions = new myServicesFunctions.ComparisonService();
+    expect(comparisonServiceFunctions.matchListComparisonOrchestrator(pubSubMatchListDataDateupdated, currrentMatcmlchList))
+     .toEqual([4993335]);
+  });
 
-describe('Hello World Test', () => {
-   let wrapped: any;
+  test('matchListComparisonOrchestrator should return an empty Array of Matchid when arrays are equal ', () => {
+    const comparisonServiceFunctions = new myServicesFunctions.ComparisonService();
+    expect(comparisonServiceFunctions.matchListComparisonOrchestrator(currrentMatcmlchList, currrentMatcmlchList))
+     .toEqual([]);
+  });
 
-   const req = new Request();
-   const res = {
-    redirect: (code, url) => {
-      assert.equal(code, 303);
-      assert.equal(url, "new_ref");
-    }
-  };
-myFunctions.httpTriggerPlayCricetImport(req, res);  
+  test('matchListComparisonOrchestrator should return an empty Array of Matchid when seasons are not equal ', () => {
+    const comparisonServiceFunctions = new myServicesFunctions.ComparisonService();
+    expect(comparisonServiceFunctions.matchListComparisonOrchestrator(pubSubMatchListDataSeason, currrentMatcmlchList))
+     .toEqual([]);
+  }); 
 });
+
+
+
+const currrentMatcmlchList:MatchList = {
+	"season": "2022",
+	"matches": [{
+		"id": 4993335,
+		"status": "New",
+		"published": "Yes",
+		"last_updated": "08/11/2021",
+		"league_name": "",
+		"league_id": "",
+		"competition_name": "",
+		"competition_id": "",
+		"competition_type": "Friendly",
+		"match_type": "Limited Overs",
+		"game_type": "Standard",
+		"season": "2022",
+		"match_date": "05/06/2022",
+		"match_time": "13:30",
+		"ground_name": "Navestock C.C. (The Green)",
+		"ground_id": "6775",
+		"ground_latitude": "51.6542835",
+		"ground_longitude": "0.257747",
+		"home_club_name": "Navestock CC",
+		"home_team_name": "Sunday XI",
+		"home_team_id": "50485",
+		"home_club_id": "4513",
+		"away_club_name": "Rosaneri CC",
+		"away_team_name": "Friendly XI",
+		"away_team_id": "188156",
+		"away_club_id": "11623",
+		"umpire_1_name": "",
+		"umpire_1_id": "",
+		"umpire_2_name": "",
+		"umpire_2_id": "",
+		"umpire_3_name": "",
+		"umpire_3_id": "",
+		"referee_name": "",
+		"referee_id": "",
+		"scorer_1_name": "",
+		"scorer_1_id": "",
+		"scorer_2_name": "",
+		"scorer_2_id": ""
+	}, {
+		"id": 5263936,
+		"status": "New",
+		"published": "Yes",
+		"last_updated": "17/02/2022",
+		"league_name": "",
+		"league_id": "",
+		"competition_name": "",
+		"competition_id": "",
+		"competition_type": "Friendly",
+		"match_type": "Limited Overs",
+		"game_type": "Standard",
+		"season": "2022",
+		"match_date": "16/06/2022",
+		"match_time": "18:00",
+		"ground_name": "Navestock C.C. (The Green)",
+		"ground_id": "6775",
+		"ground_latitude": "51.6542835",
+		"ground_longitude": "0.257747",
+		"home_club_name": "Navestock CC",
+		"home_team_name": "Twenty20",
+		"home_team_id": "282158",
+		"home_club_id": "4513",
+		"away_club_name": "North Weald CC",
+		"away_team_name": "Twenty20",
+		"away_team_id": "148775",
+		"away_club_id": "4659",
+		"umpire_1_name": "",
+		"umpire_1_id": "",
+		"umpire_2_name": "",
+		"umpire_2_id": "",
+		"umpire_3_name": "",
+		"umpire_3_id": "",
+		"referee_name": "",
+		"referee_id": "",
+		"scorer_1_name": "",
+		"scorer_1_id": "",
+		"scorer_2_name": "",
+		"scorer_2_id": ""
+	}]
+};
+
+ const pubSubMatchListDataDateupdated:MatchList = {
+	"season": "2022",
+	"matches": [{
+		"id": 4993335,
+		"status": "New",
+		"published": "Yes",
+		"last_updated": "01/01/2022",
+		"league_name": "",
+		"league_id": "",
+		"competition_name": "",
+		"competition_id": "",
+		"competition_type": "Friendly",
+		"match_type": "Limited Overs",
+		"game_type": "Standard",
+		"season": "2022",
+		"match_date": "05/06/2022",
+		"match_time": "13:30",
+		"ground_name": "Navestock C.C. (The Green)",
+		"ground_id": "6775",
+		"ground_latitude": "51.6542835",
+		"ground_longitude": "0.257747",
+		"home_club_name": "Navestock CC",
+		"home_team_name": "Sunday XI",
+		"home_team_id": "50485",
+		"home_club_id": "4513",
+		"away_club_name": "Rosaneri CC",
+		"away_team_name": "Friendly XI",
+		"away_team_id": "188156",
+		"away_club_id": "11623",
+		"umpire_1_name": "",
+		"umpire_1_id": "",
+		"umpire_2_name": "",
+		"umpire_2_id": "",
+		"umpire_3_name": "",
+		"umpire_3_id": "",
+		"referee_name": "",
+		"referee_id": "",
+		"scorer_1_name": "",
+		"scorer_1_id": "",
+		"scorer_2_name": "",
+		"scorer_2_id": ""
+	}, {
+		"id": 5263936,
+		"status": "New",
+		"published": "Yes",
+		"last_updated": "17/02/2022",
+		"league_name": "",
+		"league_id": "",
+		"competition_name": "",
+		"competition_id": "",
+		"competition_type": "Friendly",
+		"match_type": "Limited Overs",
+		"game_type": "Standard",
+		"season": "2022",
+		"match_date": "16/06/2022",
+		"match_time": "18:00",
+		"ground_name": "Navestock C.C. (The Green)",
+		"ground_id": "6775",
+		"ground_latitude": "51.6542835",
+		"ground_longitude": "0.257747",
+		"home_club_name": "Navestock CC",
+		"home_team_name": "Twenty20",
+		"home_team_id": "282158",
+		"home_club_id": "4513",
+		"away_club_name": "North Weald CC",
+		"away_team_name": "Twenty20",
+		"away_team_id": "148775",
+		"away_club_id": "4659",
+		"umpire_1_name": "",
+		"umpire_1_id": "",
+		"umpire_2_name": "",
+		"umpire_2_id": "",
+		"umpire_3_name": "",
+		"umpire_3_id": "",
+		"referee_name": "",
+		"referee_id": "",
+		"scorer_1_name": "",
+		"scorer_1_id": "",
+		"scorer_2_name": "",
+		"scorer_2_id": ""
+	}]
+};
+
+const pubSubMatchListDataNewmatch:MatchList = {
+	"season": "2022",
+	"matches": [{
+		"id": 1234567,
+		"status": "New",
+		"published": "Yes",
+		"last_updated": "01/01/2022",
+		"league_name": "",
+		"league_id": "",
+		"competition_name": "",
+		"competition_id": "",
+		"competition_type": "Friendly",
+		"match_type": "Limited Overs",
+		"game_type": "Standard",
+		"season": "2022",
+		"match_date": "05/06/2022",
+		"match_time": "13:30",
+		"ground_name": "Navestock C.C. (The Green)",
+		"ground_id": "6775",
+		"ground_latitude": "51.6542835",
+		"ground_longitude": "0.257747",
+		"home_club_name": "Navestock CC",
+		"home_team_name": "Sunday XI",
+		"home_team_id": "50485",
+		"home_club_id": "4513",
+		"away_club_name": "Rosaneri CC",
+		"away_team_name": "Friendly XI",
+		"away_team_id": "188156",
+		"away_club_id": "11623",
+		"umpire_1_name": "",
+		"umpire_1_id": "",
+		"umpire_2_name": "",
+		"umpire_2_id": "",
+		"umpire_3_name": "",
+		"umpire_3_id": "",
+		"referee_name": "",
+		"referee_id": "",
+		"scorer_1_name": "",
+		"scorer_1_id": "",
+		"scorer_2_name": "",
+		"scorer_2_id": ""
+	},{
+		"id": 4993335,
+		"status": "New",
+		"published": "Yes",
+		"last_updated": "08/11/2021",
+		"league_name": "",
+		"league_id": "",
+		"competition_name": "",
+		"competition_id": "",
+		"competition_type": "Friendly",
+		"match_type": "Limited Overs",
+		"game_type": "Standard",
+		"season": "2022",
+		"match_date": "05/06/2022",
+		"match_time": "13:30",
+		"ground_name": "Navestock C.C. (The Green)",
+		"ground_id": "6775",
+		"ground_latitude": "51.6542835",
+		"ground_longitude": "0.257747",
+		"home_club_name": "Navestock CC",
+		"home_team_name": "Sunday XI",
+		"home_team_id": "50485",
+		"home_club_id": "4513",
+		"away_club_name": "Rosaneri CC",
+		"away_team_name": "Friendly XI",
+		"away_team_id": "188156",
+		"away_club_id": "11623",
+		"umpire_1_name": "",
+		"umpire_1_id": "",
+		"umpire_2_name": "",
+		"umpire_2_id": "",
+		"umpire_3_name": "",
+		"umpire_3_id": "",
+		"referee_name": "",
+		"referee_id": "",
+		"scorer_1_name": "",
+		"scorer_1_id": "",
+		"scorer_2_name": "",
+		"scorer_2_id": ""
+	}, {
+		"id": 5263936,
+		"status": "New",
+		"published": "Yes",
+		"last_updated": "17/02/2022",
+		"league_name": "",
+		"league_id": "",
+		"competition_name": "",
+		"competition_id": "",
+		"competition_type": "Friendly",
+		"match_type": "Limited Overs",
+		"game_type": "Standard",
+		"season": "2022",
+		"match_date": "16/06/2022",
+		"match_time": "18:00",
+		"ground_name": "Navestock C.C. (The Green)",
+		"ground_id": "6775",
+		"ground_latitude": "51.6542835",
+		"ground_longitude": "0.257747",
+		"home_club_name": "Navestock CC",
+		"home_team_name": "Twenty20",
+		"home_team_id": "282158",
+		"home_club_id": "4513",
+		"away_club_name": "North Weald CC",
+		"away_team_name": "Twenty20",
+		"away_team_id": "148775",
+		"away_club_id": "4659",
+		"umpire_1_name": "",
+		"umpire_1_id": "",
+		"umpire_2_name": "",
+		"umpire_2_id": "",
+		"umpire_3_name": "",
+		"umpire_3_id": "",
+		"referee_name": "",
+		"referee_id": "",
+		"scorer_1_name": "",
+		"scorer_1_id": "",
+		"scorer_2_name": "",
+		"scorer_2_id": ""
+	}]
+};
+
+const pubSubMatchListDataSeason:MatchList = {
+	"season": "2021",
+	"matches": [{
+		"id": 4993335,
+		"status": "New",
+		"published": "Yes",
+		"last_updated": "08/11/2021",
+		"league_name": "",
+		"league_id": "",
+		"competition_name": "",
+		"competition_id": "",
+		"competition_type": "Friendly",
+		"match_type": "Limited Overs",
+		"game_type": "Standard",
+		"season": "2022",
+		"match_date": "05/06/2022",
+		"match_time": "13:30",
+		"ground_name": "Navestock C.C. (The Green)",
+		"ground_id": "6775",
+		"ground_latitude": "51.6542835",
+		"ground_longitude": "0.257747",
+		"home_club_name": "Navestock CC",
+		"home_team_name": "Sunday XI",
+		"home_team_id": "50485",
+		"home_club_id": "4513",
+		"away_club_name": "Rosaneri CC",
+		"away_team_name": "Friendly XI",
+		"away_team_id": "188156",
+		"away_club_id": "11623",
+		"umpire_1_name": "",
+		"umpire_1_id": "",
+		"umpire_2_name": "",
+		"umpire_2_id": "",
+		"umpire_3_name": "",
+		"umpire_3_id": "",
+		"referee_name": "",
+		"referee_id": "",
+		"scorer_1_name": "",
+		"scorer_1_id": "",
+		"scorer_2_name": "",
+		"scorer_2_id": ""
+	}, {
+		"id": 5263936,
+		"status": "New",
+		"published": "Yes",
+		"last_updated": "17/02/2022",
+		"league_name": "",
+		"league_id": "",
+		"competition_name": "",
+		"competition_id": "",
+		"competition_type": "Friendly",
+		"match_type": "Limited Overs",
+		"game_type": "Standard",
+		"season": "2022",
+		"match_date": "16/06/2022",
+		"match_time": "18:00",
+		"ground_name": "Navestock C.C. (The Green)",
+		"ground_id": "6775",
+		"ground_latitude": "51.6542835",
+		"ground_longitude": "0.257747",
+		"home_club_name": "Navestock CC",
+		"home_team_name": "Twenty20",
+		"home_team_id": "282158",
+		"home_club_id": "4513",
+		"away_club_name": "North Weald CC",
+		"away_team_name": "Twenty20",
+		"away_team_id": "148775",
+		"away_club_id": "4659",
+		"umpire_1_name": "",
+		"umpire_1_id": "",
+		"umpire_2_name": "",
+		"umpire_2_id": "",
+		"umpire_3_name": "",
+		"umpire_3_id": "",
+		"referee_name": "",
+		"referee_id": "",
+		"scorer_1_name": "",
+		"scorer_1_id": "",
+		"scorer_2_name": "",
+		"scorer_2_id": ""
+	}]
+};

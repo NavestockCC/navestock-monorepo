@@ -1,0 +1,63 @@
+import * as admin from 'firebase-admin';
+import { from, map, Observable } from 'rxjs';
+
+import { Match, MatchList } from "../../interfaces/matchlist.interface";
+
+export class MatchListImport {
+    
+    afs = admin.firestore();
+
+
+   /**
+    * Gets match list import data
+    * @param seasonImport 
+    * @returns match list import data 
+    */
+   public getMatchListImportData(seasonImport:string):Observable<MatchList> {
+
+        const matchListImportDoc = this.afs.collection('MatchListImport').doc(seasonImport)
+        
+        
+        const matchListImportDB = from(matchListImportDoc.get());
+
+       return matchListImportDB.pipe(
+            map(resp => {
+                let returnML: MatchList = undefined;
+                    if(resp.exists){
+                        returnML =  resp.data() as MatchList;
+                    } else{
+                        returnML ={
+                            season: seasonImport, 
+                            matches: []
+                        };
+                    }
+                return returnML
+            })
+        )
+    }
+
+
+/**
+ * Updates match details
+ * @param match 
+ */
+ public setMatchListImportData(matchList:MatchList, seasonImport:string):void {
+
+    const matchListImportDoc = this.afs.collection('MatchListImport').doc(seasonImport)
+    matchListImportDoc.set(matchList);
+}    
+
+/**
+ * Updates match details
+ * @param match 
+ */
+public updateMatchDetails(match:Match):void {
+
+    const matchDetailDoc = this.afs.collection('Fixtures').doc(match.id.toString());
+    matchDetailDoc.set(match);
+    
+}
+
+
+
+}
