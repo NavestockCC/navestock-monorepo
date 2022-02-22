@@ -1,3 +1,5 @@
+import * as admin from 'firebase-admin';
+
 export { MatchList, Match };
 
 /**
@@ -13,6 +15,7 @@ interface Match {
   status: string;
   published: string;
   last_updated: string;
+  last_updated_timestamp?: admin.firestore.Timestamp;
   league_name?: string;
   league_id?: string;
   competition_name?: string;
@@ -22,6 +25,7 @@ interface Match {
   game_type?: string;
   season?: string;
   match_date: string;
+  match_date_timestamp?: admin.firestore.Timestamp;
   match_time: string;
   ground_name?: string;
   ground_id?: string;

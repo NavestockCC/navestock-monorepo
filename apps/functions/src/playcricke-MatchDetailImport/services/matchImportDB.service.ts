@@ -5,8 +5,16 @@ import { Match, MatchList } from "../../interfaces/matchlist.interface";
 
 export class MatchListImport {
     
-    afs = admin.firestore();
 
+        afs = admin.firestore();
+ 
+        /*
+constructor(){
+    this.afs.settings({
+        ignoreUndefinedProperties: true
+      });
+}
+*/
 
    /**
     * Gets match list import data
@@ -44,7 +52,7 @@ export class MatchListImport {
  public setMatchListImportData(matchList:MatchList, seasonImport:string):void {
 
     const matchListImportDoc = this.afs.collection('MatchListImport').doc(seasonImport)
-    matchListImportDoc.set(matchList);
+    matchListImportDoc.set(matchList, { merge: true });
 }    
 
 /**
@@ -52,9 +60,8 @@ export class MatchListImport {
  * @param match 
  */
 public updateMatchDetails(match:Match):void {
-
     const matchDetailDoc = this.afs.collection('Fixtures').doc(match.id.toString());
-    matchDetailDoc.set(match);
+    matchDetailDoc.set(match, { merge: true });
     
 }
 
