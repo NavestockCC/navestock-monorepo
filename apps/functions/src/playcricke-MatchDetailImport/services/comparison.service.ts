@@ -16,7 +16,7 @@ export class ComparisonService {
  * @returns empty number[] if season attributes in array are not equal
  * @returns empty number[] if all items in the array are found and all items found are equal 
  */
-public matchListComparisonOrchestrator(pubSubMatchListData: MatchList, currentMatchListData: MatchList):number[] {
+public matchListComparisonOrchestrator(pubSubMatchListData: any, currentMatchListData: any):number[] {
     const matchtoUpdate: number[] = [];
  try {
 
@@ -43,8 +43,8 @@ for (let i = 0; i < pubSubMatchListData.matches.length; i++) {
 }
 } catch (error) {
      console.error(error);
-}
-    return matchtoUpdate;
+} 
+return matchtoUpdate;
 }
 
     

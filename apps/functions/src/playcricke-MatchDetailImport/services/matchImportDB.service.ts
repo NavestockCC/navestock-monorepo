@@ -60,7 +60,7 @@ constructor(){
  * @param match 
  */
 public updateMatchDetails(match:Match):void {
-    const matchDetailDoc = this.afs.collection('Fixtures').doc(match.id.toString());
+    const matchDetailDoc = this.afs.collection('Fixtures').doc(match.description.id.toString());
     matchDetailDoc.set(match, { merge: true });
     
 }
