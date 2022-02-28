@@ -1,5 +1,5 @@
 import * as myServicesFunctions from '../src/playcricke-MatchDetailImport/services/comparison.service';
-import {MatchList, Match} from '../src/interfaces/matchlist.interface';
+import {MatchList} from '../../interfaces/matchlist.interface';
 
 
 describe('Match List Comparison Service Test', () => {

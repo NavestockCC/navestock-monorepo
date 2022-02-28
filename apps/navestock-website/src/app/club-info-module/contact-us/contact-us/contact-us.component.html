@@ -1,0 +1,24 @@
+<div fxLayout="row" fxLayoutAlign="center start">
+	<div fxFlex='70' fxFlex.lt-sm="100">
+		<img class='splash_img' src='assets/img/Splashv2.jpg'>
+		<p></p>
+		<p class='left_panel_heading'>Club Contact Information</p>
+
+
+		<mat-card class="customMembercard" *ngFor="let member of committee | async">
+			<mat-card-header class="customMembercard">
+				<div mat-card-avatar></div>
+				<mat-card-title class="customMembercard">{{member.Name}}</mat-card-title>
+				<mat-card-subtitle>{{member.Title}}</mat-card-subtitle>
+			</mat-card-header>
+			<mat-card-content *ngIf="member.ContactDetailsPublish" class="customMembercard">
+				<span *ngIf="member.TelPublish">{{member.Tel}}<br></span>
+				<span *ngIf="member.emailPublish">{{member.email}}</span>
+			</mat-card-content>
+		</mat-card>
+
+	</div>
+	<div fxFlex='30' fxFlex.lt-sm="100">
+		<a [routerLink]="['/playerswanted']"><img class='players_wanted_img' src='assets/img/PlayersWantedRedv1.png'></a>
+	</div>
+</div>

@@ -1,0 +1,50 @@
+@import '~@angular/material/theming';
+
+@mixin club-history-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  ncc-app-club-history {
+
+    .content{
+      margin: 20px;
+      padding-bottom: 1em;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .splash_img {
+      display: block;
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 95%;
+      border-radius: 10px;
+      border: 0.5px solid mat-color($primary, 600);
+    }
+
+    .players_wanted_img {
+      width: 95%;
+      height: auto;
+      margin-top: 10px;
+      margin-left: 5px;
+      border-radius: 10px;
+    }
+  }
+}
+
+@mixin club-history-typography($config) {
+  ncc-app-club-history {
+    p {
+      @include mat-typography-level-to-styles($config, body-1);
+    }
+    h1 {
+      @include mat-typography-level-to-styles($config, subheading-1);
+      font-weight: bold;
+    }
+  }
+}

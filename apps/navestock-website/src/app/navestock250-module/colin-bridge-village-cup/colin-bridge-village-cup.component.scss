@@ -1,0 +1,41 @@
+@import '~@angular/material/theming';
+
+@mixin colin-bridge-village-cup-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  ncc-app-colin-bridge-village-cup {
+    .splash_img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px;
+      margin-top: 10px;
+      width: 30%;
+      border: 0;
+	}
+
+    .left_panel_heading {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: mat-color($accent, 900);
+    }
+    .left_panel_heading2 {
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: mat-color($primary, 600);
+    }
+
+    .history_text {
+      text-align: justify;
+      text-justify: inter-word;
+      font-size: 1.1em;
+      margin-left: 20%;
+      margin-right: 20%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }	
+  }
+}

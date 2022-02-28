@@ -1,0 +1,72 @@
+@import '~@angular/material/theming';
+
+@mixin banner-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  
+  ncc-app-banner {
+    .banner {
+      /*
+     <div> formatting
+     */
+      background: mat-color($primary, 600);
+      border-radius: 10px;
+
+      /*
+       Position <div> on page
+       */
+      position: relative;
+      margin-right: auto;
+      margin-left: auto;
+      height: 80px;
+
+      vertical-align: text-middle;
+      text-align: center;
+    }
+
+    .logo_img {
+      position: relative;
+      height: 76px;
+      border-radius: 10px;
+    }
+
+    .logo_img_xs {
+      position: relative;
+      height: 47px;
+      border-radius: 10px;
+    }
+
+    .logo_h1 {
+      color: mat-color($accent, 500);
+      margin-right: 0px;
+      margin-left: 0px;
+      margin-top: 12px;
+      margin-bottom: 0px;
+    }
+
+    .logo_h1_xs {
+      color: mat-color($accent, 500);
+      margin-right: 0px;
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .logo_h2 {
+      color: mat-color($accent, 500);
+      margin-right: 0px;
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    mat-grid-list {
+      background: mat-color($primary, 600);
+      border-radius: 10px;
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-top: 3px;
+      margin-bottom: 2px;
+    }
+  }
+}

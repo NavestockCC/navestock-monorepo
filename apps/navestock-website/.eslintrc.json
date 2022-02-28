@@ -13,7 +13,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "navestockMonorepo",
+            "prefix": "nccApp",
             "style": "camelCase"
           }
         ],
@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "navestock-monorepo",
+            "prefix": "ncc-app",
             "style": "kebab-case"
           }
         ]

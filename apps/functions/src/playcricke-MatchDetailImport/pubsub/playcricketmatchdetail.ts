@@ -1,5 +1,5 @@
 import * as functions from 'firebase-functions';
-import { MatchList } from '../../interfaces/matchlist.interface';
+import { MatchList } from '../../../../interfaces/matchlist.interface';
 
 import { ComparisonService } from '../services/comparison.service';
 import { MatchListImport } from '../services/matchImportDB.service';

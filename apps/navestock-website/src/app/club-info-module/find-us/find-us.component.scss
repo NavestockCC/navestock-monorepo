@@ -1,0 +1,28 @@
+@import '~@angular/material/theming';
+
+@mixin find-us-theme($theme) {
+  ncc-app-find-us {
+
+    .left_panel_heading {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      margin: 20px;
+    }
+
+    .left_panel_text {
+      text-align: justify;
+      text-justify: inter-word;
+      margin: 20px;
+    }
+
+    .players_wanted_img {
+      width: 95%;
+      height: auto;
+      margin-top: 10px;
+      margin-left: 5px;
+      border-radius: 10px;
+    }
+
+  }
+}

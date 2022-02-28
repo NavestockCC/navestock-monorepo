@@ -1,0 +1,13 @@
+<div *ngIf="userAuth | async as uAuth; else showLogin">
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <button mat-icon-button (click)="logout()"><img class="userImg" src="{{ uAuth.photoURL }}"></button>
+  </div>
+</div>
+
+<ng-template #showLogin>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <button mat-icon-button (click)="login()">
+      <mat-icon svgIcon="person"></mat-icon>
+    </button>
+  </div>
+</ng-template>

@@ -1,0 +1,6 @@
+@import './home-page/home.component.scss';
+
+@mixin home-page-module($theme) {
+    @include home-theme($theme);
+    @include home-typography($navestock-typography);
+}

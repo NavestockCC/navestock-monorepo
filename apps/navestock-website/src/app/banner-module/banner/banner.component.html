@@ -1,0 +1,32 @@
+<div fxLayout="row">
+    <div fxFlex fxHide="false" fxHide.xs>
+      <mat-grid-list cols="8" rowHeight="40px">
+        <mat-grid-tile colspan="1" rowspan="2">
+          <a [routerLink]="['/home']">
+          <img class='logo_img' src='assets/img/NavestockccLogo.png'>
+        </a>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="7" rowspan="1">
+          <h1 class='logo_h1'>Navestock Cricket Club</h1>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="7" rowspan="1">
+          <h3 class='logo_h2'>Established 1768</h3>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  
+    <div fxFlex fxHide="true" fxShow.xs>
+        <mat-grid-list cols="7" rowHeight="50px">
+          <mat-grid-tile colspan="1" rowspan="1">
+            <img class='logo_img_xs' src='assets/img/NavestockccLogo.png'>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="5" rowspan="1">
+            <h2 class='logo_h1_xs'>Navestock Cricket</h2>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1" rowspan="1">
+           <ncc-app-menu menuStyle='popup'></ncc-app-menu>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+  
+  </div>

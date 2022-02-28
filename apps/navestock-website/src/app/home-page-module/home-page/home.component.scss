@@ -1,0 +1,75 @@
+@import '~@angular/material/theming';
+
+@mixin home-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+
+  ncc-app-home-component{
+		h1{
+			text-align: center;    
+			color: mat-color($accent,  900);
+			}
+		h2{
+			text-align: center;    
+			color: mat-color($primary,  600);
+			}
+		.hometxt{
+			margin: auto;
+			width: 70%;
+			text-align: justify;
+			text-justify: inter-word;
+			padding-bottom: 1em;
+			}
+		.players_wanted_img{
+			width: 95%;
+			height: auto;
+			margin-top: 10px;
+			margin-left: 5px;
+			border-radius: 10px;
+			}
+
+		//img formatting		
+		.splash_img{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 30px;
+			margin-top: 10px;
+			width: 50%;
+			border: 0;
+			border-radius: 5px	
+			}
+		.BlackBull_img{
+			width: auto;
+			height: 80px;
+			margin: 5px;
+			}
+		.EssexDemCo_img{
+			width: auto;
+			height: 50px;
+			margin: 5px;
+			}
+		.AGS_img{
+			width: 50px;
+			height: auto;
+			margin: 5px;
+			}	
+	}
+}
+
+@mixin home-typography($config) {
+    ncc-app-home-component{
+        p{
+            @include mat-typography-level-to-styles($config, body-1);
+        }
+        h1{
+            @include mat-typography-level-to-styles($config, headline);
+            font-weight: bold;
+		}
+		h2{
+            @include mat-typography-level-to-styles($config, subheading-2);
+            font-weight: bold;
+        }
+    }
+}

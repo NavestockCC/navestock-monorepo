@@ -1,0 +1,19 @@
+@import '~@angular/material/theming';
+
+@mixin players-wanted-theme($theme) {
+  ncc-app-players-wanted {
+    .left_panel_text {
+      text-align: justify;
+      text-justify: inter-word;
+      margin: 20px;
+    }
+
+    .players_wanted_img {
+      width: 95%;
+      height: auto;
+      margin-top: 10px;
+      margin-left: 5px;
+      border-radius: 10px;
+    }
+  }
+}

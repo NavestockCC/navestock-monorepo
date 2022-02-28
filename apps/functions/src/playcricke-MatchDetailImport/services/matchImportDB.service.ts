@@ -1,7 +1,7 @@
 import * as admin from 'firebase-admin';
 import { from, map, Observable } from 'rxjs';
 
-import { Match, MatchList } from "../../interfaces/matchlist.interface";
+import { Match, MatchList } from "../../../../interfaces/matchlist.interface";
 
 export class MatchListImport {
     

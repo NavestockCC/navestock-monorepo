@@ -1,0 +1,5 @@
+@import './honoursboard/honoursboard.component.scss';
+
+@mixin honoursboard-module($theme) {
+    @include honoursboard-theme($theme);
+}

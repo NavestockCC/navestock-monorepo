@@ -1,0 +1,5 @@
+@import './user-authentication/user-authentication.component.scss';
+
+@mixin user-authentication-module($theme) {
+    @include user-authentication-theme($theme);
+}

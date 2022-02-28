@@ -1,0 +1,14 @@
+@import './club-history/club-history.component.scss';
+@import './find-us/find-us.component.scss';
+@import './contact-us//contact-us.scss';
+@import './navestock-privacy-statement/navestock-privacy-statement.component.scss';
+@import './players-wanted/players-wanted.component.scss';
+
+@mixin club-info-module($theme) {
+    @include club-history-theme($theme);
+    @include club-history-typography($navestock-typography);
+    @include find-us-theme($theme);
+    @include contact-us-theme($theme);
+    @include privacy-statement-theme($theme);
+    @include players-wanted-theme($theme);
+}

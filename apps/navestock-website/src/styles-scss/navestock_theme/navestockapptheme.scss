@@ -1,0 +1,49 @@
+/**
+* @Referance https://blog.thoughtram.io/angular/2017/05/23/custom-themes-with-angular-material.html
+*/
+
+@import '~@angular/material/theming';
+@import 'navestockappthemepalette';
+@import 'navestockappthemefonts';
+
+//Navestock Themes
+@import '../../app/banner-module/banner.module.scss';
+@import '../../app/club-info-module/club-info-module.scss';
+@import '../../app/home-page-module/home-page-module.scss';
+@import '../../app/navestock250-module/navestock250.module.scss';
+@import '../../app/user-authentication-module/user-authentication.module.scss';
+@import '../../app/honoursboard-module/honoursboard.module.scss';
+//@import '../../app/matches-module/match.module.scss';
+
+//Modules linked to theme
+// @import '../app/netsModule/nets.component.scss';
+
+
+
+
+@include mat-core($navestock-typography);
+
+// mandatory stuff for theming
+$nav-app-primary: mat-palette($nav-brand);
+$nav-app-accent:  mat-palette($nav-accent);
+
+// include the custom theme components into a theme object
+$nav-app-theme: mat-light-theme(
+  $nav-app-primary, 
+  $nav-app-accent
+  );
+
+  //create a meta theme mix-in that executes all theme mix-ins for our custom components
+  @mixin nav-app-theme($theme) {
+    @include banner-module($theme);
+    @include club-info-module($theme);
+    @include home-page-module($theme);
+    @include navestock250-module($theme);
+    @include user-authentication-module($theme);
+    @include honoursboard-module($theme);
+   // @include matches-module($theme);
+  }
+
+// include the custom theme object into the angular material theme
+@include angular-material-theme($nav-app-theme);
+@include nav-app-theme($nav-app-theme);

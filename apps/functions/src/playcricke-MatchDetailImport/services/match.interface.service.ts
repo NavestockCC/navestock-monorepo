@@ -8,7 +8,7 @@ import {
   Bat,
   Bowl,
   FallOfWickets,
-} from '../../interfaces/matchlist.interface';
+} from '../../../../interfaces/matchlist.interface';
 
 export class MatchInterfaceServices {
   /**

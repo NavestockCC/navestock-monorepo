@@ -1,0 +1,39 @@
+
+<div *ngIf="showHorizontalMenu" fxLayout="row" fxLayoutAlign="center center" fxHide.xs="True">
+<!-- Horisontal menu  -->
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <span class="example-spacer"></span>
+      <span><a [routerLink]="['/home/home']">Home</a></span>
+      <span><a [routerLink]="['/club/clubhistory']">Club History</a></span>
+      <span><a [routerLink]="['/ncc250/250home']">250th Anniversary</a></span>
+      <span *ngFor="let t of menuTeams | async">
+        <a [routerLink]="['/match/matchlist', t.team_id]">{{t.team_name}}</a>
+      </span>
+      <span><a [routerLink]="['/honoursboard']">Honours Board</a></span>
+      <span><a [routerLink]="['/club/contactus']">Contact Us</a></span>
+      <span><a [routerLink]="['/club/findus']">Find Us</a></span>
+      <span><ncc-app-user-authentication></ncc-app-user-authentication></span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+ </div>
+
+<!-- Small menu with button to active a menu pop-up -->
+  <div *ngIf="showPopupMenu"  fxLayout.xs="column" fxShow="false" fxShow.xs="True">
+    <button mat-icon-button [matMenuTriggerFor]="navestockMenu">
+      <mat-icon svgIcon="menu" color="accent"></mat-icon>
+    </button>
+    <mat-menu #navestockMenu="matMenu">
+      <ul class="mat-menu-ul">
+        <li><a [routerLink]="['/home/home']">Home</a></li>
+        <li><a [routerLink]="['/club/clubhistory']">Club History</a></li>
+        <li><a [routerLink]="['/ncc250/250home']">250th Anniversary</a></li>
+        <li *ngFor="let t of menuTeams | async"><a [routerLink]="['/match/matchlist', t.team_id]">{{t.team_name}}</a></li>
+        <li><a [routerLink]="['/honoursboard/honoursboard']">Honours Board</a></li>
+        <li><a [routerLink]="['/club/contactus']">Contact Us</a></li>
+        <li><a [routerLink]="['/club/findus']">Find Us</a></li>
+        <li><ncc-app-user-authentication></ncc-app-user-authentication></li>
+    </ul>
+    </mat-menu>
+</div>

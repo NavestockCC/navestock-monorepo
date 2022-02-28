@@ -1,0 +1,11 @@
+@import './veterans7aside/veterans7aside.component.scss';
+@import './home-page/home250.component.scss';
+@import './gala-dinner/gala-dinner.component.scss';
+@import './colin-bridge-village-cup/colin-bridge-village-cup.component.scss';
+
+@mixin navestock250-module($theme) {
+    @include colin-bridge-village-cup-theme($theme);
+    @include gala-dinner-theme($theme);
+    @include home-250-theme($theme);
+    @include veterans7aside-theme($theme);
+}

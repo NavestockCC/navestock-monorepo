@@ -1,0 +1,28 @@
+
+<div *ngIf="userAuth | async; else showLogin">
+<input 
+  style="display: none" 
+  type="file" (change)="onFileChanged($event)" 
+  #fileInput>
+  <div *ngIf="!selectedFile"> 
+      <button mat-stroked-button color="primary" (click)="fileInput.click()">Select File</button>
+  </div>
+
+<div *ngIf="selectedFile">
+  <p>File to upload: {{selectedFile.name}} <button mat-stroked-button color="accent" (click)="fileInput.click()">Change File Selection</button></p>
+  <mat-form-field>
+    <textarea matInput placeholder="Caption"></textarea>
+  </mat-form-field>
+  <br>
+  <button mat-stroked-button color="primary" (click)="onUpload()">Upload!</button> <button mat-stroked-button color="primary" (click)="canselUpload()">Cansel Upload</button>
+</div>
+
+<div *ngIf="showUploadProgress">
+<P>Upload Progress:</P>
+  <mat-progress-bar mode="determinate" value="{{uploadPercent | async}}"></mat-progress-bar><br>
+</div>
+</div>
+
+<ng-template #showLogin>
+  <button mat-stroked-button color="primary" (click)="login()">Login with Google to upload</button>
+</ng-template>

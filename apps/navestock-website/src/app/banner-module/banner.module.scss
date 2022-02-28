@@ -1,0 +1,7 @@
+@import './banner/banner.component.scss';
+@import './menu/menu.component.scss';
+
+@mixin banner-module($theme) {
+    @include banner-theme($theme);
+    @include menu-theme($theme);
+}

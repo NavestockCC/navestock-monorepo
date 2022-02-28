@@ -1,0 +1,67 @@
+@import '~@angular/material/theming';
+
+@mixin privacy-statement-theme($theme) {
+    
+  ncc-app-navestock-privacy-statement {
+    h1 {
+      text-align: center;
+    }
+
+    .grid-list {
+      width: 80%;
+      border-collapse: collapse;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .statementHeader {
+      font-weight: bold;
+      font-size: larger;
+      color: black;
+      background-color: darkgrey;
+      padding: 8px;
+      border: 1px solid black;
+    }
+
+    .statementText {
+      align-content: flex-start;
+      text-align: left;
+      font-weight: normal;
+      font-size: 1em;
+      color: black;
+      background-color: white;
+      padding: 8px;
+      border: 1px solid black;
+    }
+
+    .statementLeftHeader {
+      align-content: flex-start;
+      text-align: left;
+      font-weight: bold;
+      font-size: 1em;
+      color: black;
+      background-color: darkgrey;
+      padding: 8px;
+      border: 1px solid black;
+      width: 30%;
+    }
+
+    .splash_img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px;
+      margin-top: 10px;
+      width: 30%;
+      border: 0;
+      border-radius: 5px;
+    }
+
+    .pdf {
+      align-content: flex-end;
+      background-color: white;
+      padding: 8px;
+      text-align: right;
+    }
+  }
+}

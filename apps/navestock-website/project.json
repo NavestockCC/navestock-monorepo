@@ -21,7 +21,8 @@
           "apps/navestock-website/src/assets"
         ],
         "styles": [
-          "apps/navestock-website/src/styles.scss"
+          "apps/navestock-website/src/styles-scss/styles.scss",
+          "apps/navestock-website/src/styles-scss/navestock_theme/navestockapptheme.scss"
         ],
         "scripts": []
       },
@@ -31,7 +32,7 @@
             {
               "type": "initial",
               "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumError": "2mb"
             },
             {
               "type": "anyComponentStyle",

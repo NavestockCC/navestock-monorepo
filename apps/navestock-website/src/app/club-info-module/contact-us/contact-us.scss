@@ -1,0 +1,53 @@
+@import '~@angular/material/theming';
+
+@mixin contact-us-theme($theme) {
+  ncc-app-contact-us {
+    .splash_img {
+      position: relative;
+      width: 80%;
+      border-radius: 10px;
+      margin: 10px;
+    }
+
+    .left_panel_heading {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .left_panel_text {
+      text-align: justify;
+      text-justify: inter-word;
+      margin: 20px;
+    }
+
+    .players_wanted_img {
+      width: 95%;
+      height: auto;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+
+    /* Mat card styles for memeber cards  */
+    .customMembercard.mat-card {
+      box-shadow: none !important;
+    }
+
+    .customMembercard.mat-card-title {
+      font-size: medium;
+      font-weight: bold;
+    }
+
+    .mat-card-avatar {
+      background-image: url('../../../assets/img/NavestockccLogo.png');
+      background-size: cover;
+      height: 30px;
+      width: 30px;
+    }
+
+    .customMembercard.mat-card-content {
+      padding-left: 45px;
+      padding-top: 0px;
+    }
+  }
+}

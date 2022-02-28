@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+
+@mixin user-authentication-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  ncc-app-user-authentication {
+    .userImg {
+      max-width: 24px;
+      height: 24px;
+      border-radius: 100%;
+      border: 1px solid mat-color($accent, 600);
+      padding: 2px;
+    }
+  }
+}

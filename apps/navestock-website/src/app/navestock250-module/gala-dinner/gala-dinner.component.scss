@@ -1,0 +1,105 @@
+@import '~@angular/material/theming';
+
+@mixin gala-dinner-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  ncc-app-gala-dinner {
+    .splash_img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px;
+      margin-top: 10px;
+      width: 30%;
+      border: 0;
+    }
+    .naveOldPic_img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px;
+      margin-top: 10px;
+      width: 60%;
+      border: 0;
+    }
+    .goochPic_img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px;
+      margin-top: 10px;
+      width: 20%;
+      border: 0;
+    }
+    .dinnerMenuPic_img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px;
+      margin-top: 10px;
+      width: 45%;
+      border: 0;
+    }
+
+    .left_panel_heading {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: mat-color($accent, 900);
+    }
+    .left_panel_heading2 {
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: mat-color($primary, 600);
+    }
+
+    .left_panel_heading3 {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: mat-color($accent, 900);
+    }
+
+    .history_text {
+      text-align: justify;
+      text-justify: inter-word;
+      font-size: 1.1em;
+      margin-left: 20%;
+      margin-right: 20%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .history_text_sttribution {
+      text-align: right;
+      text-justify: inter-word;
+      font-size: 1em;
+      margin-left: 20%;
+      margin-right: 20%;
+      margin-top: 0px;
+      margin-bottom: 20px;
+    }
+
+    .left_panel_text {
+      text-align: justify;
+      text-justify: inter-word;
+      margin: 20px;
+    }
+
+    .right_panel_heading2 {
+      padding-top: 0.5em;
+      text-align: left;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: mat-color($primary, 600);
+    }
+    .players_wanted_img {
+      width: 95%;
+      height: auto;
+      margin-top: 10px;
+      margin-left: 5px;
+      border-radius: 10px;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 // Imports
 
 // Imports Interfaces
-import { MatchList } from '../../interfaces/matchlist.interface';
+import { MatchList } from '../../../../interfaces/matchlist.interface';
 
 
 export class ComparisonService {

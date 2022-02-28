@@ -1,0 +1,57 @@
+<form [formGroup]="committeeForm">
+  <mat-card formArrayName="membersArray">
+    <mat-card *ngFor="let student of membersArray.controls; let i = index" [formGroupName]="i">
+    <mat-card-content >
+      <mat-form-field>
+        <input matInput formControlName="Key" placeholder="Key">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput formControlName="Title" placeholder="Title">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput formControlName="Name" placeholder="Name">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput formControlName="Tel" placeholder="Tel">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput formControlName="email" placeholder="email">
+      </mat-form-field>
+      <br>
+      <mat-radio-group  formControlName="MemberType" placeholder="Member Type">
+          <mat-radio-button color="primary" value="Committee">Committee</mat-radio-button>
+          <mat-radio-button color="primary" value="Captains">Captains</mat-radio-button>
+      </mat-radio-group>
+       <br> 
+      <mat-slide-toggle color="primary" formControlName="Publish">Publish</mat-slide-toggle>
+      <br>
+      <mat-form-field>
+        <input matInput formControlName="SortPosition" type="number" placeholder="SortPosition">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <div *ngIf="userAuth | async; then showButtons else showLogin"></div>
+        <ng-template #showButtons>
+            <button mat-icon-button (click)="saveMember(i)">
+                <mat-icon svgIcon="save" color="primary"></mat-icon>
+            </button>
+              
+          <button mat-icon-button (click)="removeMember(i)">
+                <mat-icon svgIcon="delete" color="primary"></mat-icon>
+            </button>
+        </ng-template>
+        
+        <ng-template #showLogin>
+          <h2>** Please login **</h2>
+        </ng-template>
+    </mat-card-actions>
+  </mat-card>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="addMember()">Add Member</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
