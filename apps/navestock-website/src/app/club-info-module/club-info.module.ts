@@ -10,6 +10,7 @@ import { environment } from '../../environments/environment';
  * External Modules 
  */
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 /** 
  * Angular Modules 
@@ -43,7 +44,8 @@ import { NavestockPrivacyStatementComponent } from './navestock-privacy-statemen
     FlexLayoutModule,
     NavestockMaterialModule,
     ClubInfoRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GoogleMapsModule
   ],
   exports:[
     ClubHistoryComponent,

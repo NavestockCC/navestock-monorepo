@@ -2,7 +2,6 @@
 
 @mixin find-us-theme($theme) {
   ncc-app-find-us {
-
     .left_panel_heading {
       text-align: center;
       font-size: 1.5em;
@@ -24,5 +23,12 @@
       border-radius: 10px;
     }
 
+    .gmap {
+      margin: 20px;
+      .map-container {
+        height: 400px;
+        width: 100%;
+      }
+    }
   }
 }

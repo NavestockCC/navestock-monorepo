@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { from, Observable, of } from 'rxjs';
+import { environment } from '../../../environments/environment';
+import { Loader } from '@googlemaps/js-api-loader';
 
 
 @Component({
@@ -6,37 +9,37 @@ import { Component } from '@angular/core';
   templateUrl: './find-us.component.html',
   styleUrls: ['./find-us.component.scss']
 })
-export class FindUsComponent{
+export class FindUsComponent implements OnInit{
 
-  /* Google Map Parameters */
-  lat = 51.6538104;
-  lng = 0.2593911;
-  zoom  = 15;
-  draggable = true;
+  mapInit!:Observable<boolean>;
+  navestockLatLang = { lat: 51.65399, lng: 0.25922 };
+  navestockLatLang1 = { lat: 51.65500, lng: 0.25922 };
+  
+
+  mapOptions: google.maps.MapOptions = {
+    center: this.navestockLatLang,
+    zoom : 15,
+    draggable: true,
+ }
+
+ markerOptions: google.maps.MarkerOptions[] = [{
+                                            draggable: false,
+                                            title:"Navestock Cricket Club",
+                                            icon:"../../../assets/img/NavestockPin.png",
+                                            position: this.navestockLatLang
+                                          }];
 
 
-  /* Google Map Market Parameters */
-markers: marker[] = [
-	  {
-		  lat: 51.6538104,
-		  lng: 0.2593911,
-		  draggable: false,
-      iconUrl: 'assets/img/NavestockPin.png',
-      infowintxt: [{ address: 'The Green'}, { address: 'Navestockside'}, {address:'near Brentwood Essex'}, {address: 'CM14 5SD'} ]
-	  }
-  ];
+  ngOnInit(): void {
+    const loader = new Loader({
+      apiKey: environment.googleMapKey.apiKey
+    })
+
+    from(loader.load()).subscribe(
+      () => this.mapInit = of(true)
+    )
+
+  }
+ 
+
 }
-// just an interface for type safety.
-interface marker {
-	lat: number;
-	lng: number;
-	label?: string;
-  infowintxt?: address[];
-	draggable: boolean;
-  iconUrl : string;
-}
-
-interface address{
-  address: string
-}
-
