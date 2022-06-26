@@ -29,6 +29,7 @@ import { ClubInfoModule } from '../club-info-module/club-info.module';
 import { HomePageModule } from '../home-page-module/home-page.module';
 import { Navestock250Module } from '../navestock250-module/navestock250.module';
 import { HonoursboardModule } from '../honoursboard-module/honoursboard.module';
+import { MatchesModule } from '../matches-module/matches.module';
 
 
 
@@ -53,6 +54,7 @@ import { HonoursboardModule } from '../honoursboard-module/honoursboard.module';
     HomePageModule,
     Navestock250Module,
     HonoursboardModule,
+    MatchesModule,
   ],
   providers: [
   ],

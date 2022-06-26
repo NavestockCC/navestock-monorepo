@@ -1,0 +1,7 @@
+@import './match-list-month/match-list-month.component.scss';
+
+
+@mixin matches-module($theme) {
+    @include match-list-month-theme($theme);
+
+}

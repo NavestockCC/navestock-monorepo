@@ -23,6 +23,7 @@ export class ContactUsService {
   getCaptains(): Observable<CommitteeMember[]> {
     const captains = this.afs.collection<CommitteeMember>('NavestockCommitee', ref => ref.where('Publish', '==', true).where('MemberType', '==', 'Captains').orderBy('SortPosition', 'asc'));
     return captains.valueChanges();
+    
   }
 
   saveCommitteeMembers(CM: CommitteeMember): void {
