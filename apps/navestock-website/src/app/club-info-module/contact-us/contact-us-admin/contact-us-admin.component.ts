@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, Validators, UntypedFormArray, UntypedFormBuilder } from '@angular/forms';
 import { MatIconRegistry } from '@angular/material/icon';
 import {DomSanitizer} from '@angular/platform-browser';
 import {Observable} from 'rxjs';
@@ -19,12 +19,12 @@ import {UserAuthenticationService} from '../../../user-authentication-module/use
   styleUrls: ['./contact-us-admin.component.scss']
 })
 export class ContactUsAdminComponent {
- public committeeForm!: FormGroup;
+ public committeeForm!: UntypedFormGroup;
   public userAuth: Observable<firebase.User>;
 
   constructor(private iconRegistry: MatIconRegistry,
               private sanitizer: DomSanitizer,
-              private fb: FormBuilder,
+              private fb: UntypedFormBuilder,
               private contactUsService: ContactUsService,
               private UAS: UserAuthenticationService) {
     this.createForm();
@@ -57,20 +57,20 @@ export class ContactUsAdminComponent {
     });
    }
 
-  get membersArray(): FormArray {
-    return this.committeeForm.get('membersArray') as FormArray;
+  get membersArray(): UntypedFormArray {
+    return this.committeeForm.get('membersArray') as UntypedFormArray;
   }
 
-  initMember(m: CommitteeMember): FormGroup {
+  initMember(m: CommitteeMember): UntypedFormGroup {
       return this.fb.group({
-        'Key': new FormControl(m.Key),
-        'Title': new FormControl(m.Title, Validators.required),
-        'Name': new FormControl(m.Name, Validators.required),
-        'Tel': new FormControl(m.Tel),
-        'email': new FormControl(m.email),
-        'Publish': new FormControl(m.Publish, Validators.required),
-        'SortPosition': new FormControl(m.SortPosition, Validators.required),
-        'MemberType': new FormControl(m.MemberType, Validators.required)
+        'Key': new UntypedFormControl(m.Key),
+        'Title': new UntypedFormControl(m.Title, Validators.required),
+        'Name': new UntypedFormControl(m.Name, Validators.required),
+        'Tel': new UntypedFormControl(m.Tel),
+        'email': new UntypedFormControl(m.email),
+        'Publish': new UntypedFormControl(m.Publish, Validators.required),
+        'SortPosition': new UntypedFormControl(m.SortPosition, Validators.required),
+        'MemberType': new UntypedFormControl(m.MemberType, Validators.required)
       });
     }
 

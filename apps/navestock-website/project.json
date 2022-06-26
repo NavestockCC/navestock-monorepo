@@ -1,14 +1,12 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "apps/navestock-website",
   "sourceRoot": "apps/navestock-website/src",
   "prefix": "navestock-monorepo",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/navestock-website",
         "index": "apps/navestock-website/src/index.html",
@@ -88,11 +86,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/navestock-website"
-      ],
+      "outputs": ["coverage/apps/navestock-website"],
       "options": {
-        "jestConfig": "apps/navestock-website/jest.config.js",
+        "jestConfig": "apps/navestock-website/jest.config.ts",
         "passWithNoTests": true
       }
     }
