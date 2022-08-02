@@ -1,6 +1,7 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/functions/src",
+  "root": "/",
   "projectType": "application",
   "targets": {
     "build": {
@@ -11,6 +12,8 @@
         "main": "apps/functions/src/main.ts",
         "tsConfig": "apps/functions/tsconfig.app.json",
         "assets": ["apps/functions/src/assets"],
+        "outputFileName": "index.js",
+        "externalDependencies": "all",
         "generatePackageJson": true
       },
       "configurations": {
@@ -47,7 +50,17 @@
         "jestConfig": "apps/functions/jest.config.ts",
         "passWithNoTests": true
       }
-    }
+    },
+"deploy": {
+  "executor": "@nrwl/workspace:run-commands",
+  "options": {
+    "commands": [
+      "gcloud beta functions deploy functions --region us-central1 --gen2 --runtime nodejs16 --trigger-http --entry-point helloGET --source ./dist/apps/scraper --allow-unauthenticated --project {args.gcpProject}"
+    ],
+    "color": true,
+    "parallel": false
+  }
+}    
   },
   "tags": []
 }

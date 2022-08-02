@@ -5,5 +5,17 @@
     "navestock-website": "apps/navestock-website",
     "navestock-website-e2e": "apps/navestock-website-e2e"
   },
+  "firebase-emulator": {
+    "executor": "nx:run-commands",
+    "options": {
+        "commands": [
+          "lsof -t -i tcp:5001 | xargs kill",
+          "lsof -t -i tcp:8080 | xargs kill",
+          "lsof -t -i tcp:8085 | xargs kill",
+          "firebase emulators:start --import ./apps/test-data/NavestockFirestoreDB --export-on-exit ./apps/test-data/NavestockFirestoreDB"
+        ],
+        "parallel": false
+    }
+},
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

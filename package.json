@@ -13,10 +13,7 @@
     "firebase:emulators:start": "npm run firebase:emulators:kill:ports && firebase emulators:start --import ./apps/test-data/NavestockFirestoreDB --export-on-exit ./apps/test-data/NavestockFirestoreDB",
     "firebase:emulators:kill:ports": "lsof -t -i tcp:5001 | xargs kill && lsof -t -i tcp:8080 | xargs kill && lsof -t -i tcp:8085 | xargs kill"
   },
-  "main": "dist/apps/functions/main.js",
-  "engines": {
-    "node": "16"
-  },
+  
   "private": true,
   "dependencies": {
     "@angular/animations": "14.0.3",
